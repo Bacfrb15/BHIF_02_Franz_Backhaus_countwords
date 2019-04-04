@@ -5,6 +5,8 @@
  */
 package ex;
 
+import java.awt.Color;
+
 /**
  *
  * @author Franz
@@ -14,8 +16,18 @@ public class ThreadState extends javax.swing.JPanel {
     /**
      * Creates new form ThreadState
      */
-    public ThreadState() {
+    public ThreadState(String name) {
         initComponents();
+        lbState.setText(name);
+        lbState.setOpaque(true);
+    }
+    
+    public void setToWait(){
+        lbState.setBackground(Color.orange);
+    }
+    
+    public void setToRun(){
+        lbState.setBackground(Color.green);
     }
 
     /**
@@ -27,19 +39,22 @@ public class ThreadState extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lbState = new javax.swing.JLabel();
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(lbState, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(lbState, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel lbState;
     // End of variables declaration//GEN-END:variables
 }
